@@ -4,7 +4,6 @@ import 'dart:developer';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import '../../datasource/cache/models/answer_cache.dart';
 import '../../datasource/cache/models/settings_cache.dart';
 import '../../datasource/cache/models/theme_type_cache.dart';
 import '../constants/storage_consts.dart';
@@ -17,8 +16,7 @@ Future<void> setupStorage() async {
   await Hive.initFlutter();
   Hive
     ..registerAdapter(SettingsCacheAdapter())
-    ..registerAdapter(ThemeTypeCacheAdapter())
-    ..registerAdapter(AnswerCacheAdapter());
+    ..registerAdapter(ThemeTypeCacheAdapter());
 
   const secureStorage = FlutterSecureStorage();
   String? key;
@@ -56,7 +54,4 @@ Future<void> setupStorage() async {
   });
 
   await Hive.openBox(StorageConsts.hiveStorageKey);
-
-  //Specific boxes
-  await Hive.openBox<AnswerCache>(StorageConsts.hiveAnswerStorageKey);
 }

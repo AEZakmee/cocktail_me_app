@@ -1,0 +1,12 @@
+{
+  "cocktails": [
+    {
+      "idDrink": "1",
+      "strDrink": "First default"
+    },
+    {
+      "idDrink": "2",
+      "strDrink": "Second default"
+    }
+  ]
+}

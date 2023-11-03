@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'app/di/locator.dart';
 import 'app/di/storage.dart';
+import 'datasource/config/remote_config.dart';
 import 'domain/services/auth_service.dart';
 import 'firebase_options.dart';
 import 'presentation/app/app.dart';
@@ -16,6 +17,11 @@ Future<void> initApp() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   setupLocator(app);
+}
+
+Future<void> initRemoteConfig() async {
+  final config = locator<RemoteConfig>();
+  await config.init();
 }
 
 Future<void> main() async {
@@ -38,6 +44,7 @@ Future<void> main() async {
   );
 
   await initApp();
+  await initRemoteConfig();
 
   final bool userAuthenticated = locator<Auth>().isAuthenticated;
 

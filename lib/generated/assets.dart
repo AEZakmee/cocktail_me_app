@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String dataCocktails = 'assets/data/cocktails.json';
   static const String quicksandQuicksandBold =
       'fonts/quicksand/Quicksand-Bold.ttf';
   static const String quicksandQuicksandLight =

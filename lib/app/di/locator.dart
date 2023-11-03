@@ -4,23 +4,23 @@ import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 
 import '../../datasource/api/api_requests.dart';
-import '../../datasource/api/cocktails/cocktails_api_client.dart';
 import '../../datasource/api/interceptors/error_interceptor.dart';
-import '../../datasource/cache/answer/answer_cache_client.dart';
+import '../../datasource/assets/cocktails/cocktails_asset_client.dart';
 import '../../datasource/cache/settings/settings_cache_client.dart';
-import '../../domain/services/answers_service.dart';
+import '../../datasource/config/cocktails/cocktails_data_client.dart';
+import '../../datasource/config/remote_config.dart';
 import '../../domain/services/auth_service.dart';
 import '../../domain/services/localization_service.dart';
 import '../../domain/services/theme_service.dart';
-import '../../domain/usecases/cocktails/fetch_coctails_use_case.dart';
+import '../../domain/usecases/cocktails/get_coctails_use_case.dart';
 import '../../presentation/app/main_viewmodel.dart';
 import '../../presentation/home/home_viewmodel.dart';
 import '../../presentation/welcome/welcome_viewmodel.dart';
-import '../../repository/answer/answer_repo.dart';
 import '../../repository/cocktalis/cocktails_repo.dart';
 import '../../repository/handler/request_handler.dart';
 import '../../repository/settings/settings_repo.dart';
@@ -29,12 +29,18 @@ import '../constants/storage_consts.dart';
 final locator = GetIt.instance;
 
 void setupLocator(FirebaseApp app) => locator
-  //Firebase
+
+  ///Firebase
   ..registerLazySingleton(
     () => app,
   )
   ..registerLazySingleton(
     () => FirebaseAuth.instanceFor(
+      app: locator(),
+    ),
+  )
+  ..registerLazySingleton(
+    () => FirebaseRemoteConfig.instanceFor(
       app: locator(),
     ),
   )
@@ -77,22 +83,28 @@ void setupLocator(FirebaseApp app) => locator
     ),
   )
 
-  //Api Clients
-  ..registerLazySingleton<CocktailsApiClient>(
-    () => CocktailsApiClient(
-      requests: locator(),
-    ),
+  ///Asset Clients
+  ..registerLazySingleton(
+    CocktailsAssetClient.new,
   )
 
-  //Cache Clients
+  ///Cache Clients
   ..registerLazySingleton(
     () => SettingsCacheClient(
       box: Hive.box(StorageConsts.hiveStorageKey),
     ),
   )
+
+  ///Config Clients
   ..registerLazySingleton(
-    () => AnswerCacheClient(
-      box: Hive.box(StorageConsts.hiveAnswerStorageKey),
+    () => RemoteConfig(
+      firebaseRemoteConfig: locator(),
+      cocktailsAssetClient: locator(),
+    ),
+  )
+  ..registerLazySingleton(
+    () => CocktailsConfigClient(
+      config: locator(),
     ),
   )
 
@@ -100,18 +112,12 @@ void setupLocator(FirebaseApp app) => locator
   ..registerLazySingleton(RequestHandler.new)
   ..registerLazySingleton(
     () => CocktailsRepository(
-      cocktailsApiClient: locator(),
-      requestHandler: locator(),
+      cocktailsConfigClient: locator(),
     ),
   )
   ..registerLazySingleton(
     () => SettingsRepository(
       settingsCacheClient: locator(),
-    ),
-  )
-  ..registerLazySingleton(
-    () => AnswerRepository(
-      answerCacheClient: locator(),
     ),
   )
 
@@ -131,15 +137,10 @@ void setupLocator(FirebaseApp app) => locator
       settingsRepository: locator(),
     ),
   )
-  ..registerLazySingleton(
-    () => AnswersService(
-      answerRepository: locator(),
-    ),
-  )
 
   //Use Cases
   ..registerLazySingleton(
-    () => FetchCocktailsUseCase(
+    () => GetCocktailsUseCase(
       cocktailsRepo: locator(),
     ),
   )
@@ -154,8 +155,7 @@ void setupLocator(FirebaseApp app) => locator
   )
   ..registerFactory(
     () => HomeViewModel(
-      fetchCocktailsUseCase: locator(),
-      answersService: locator(),
+      getCocktailsUseCase: locator(),
       auth: locator(),
     ),
   )
