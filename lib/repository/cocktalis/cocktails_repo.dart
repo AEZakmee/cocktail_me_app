@@ -1,30 +1,27 @@
 import '../../app/model/cocktail/cocktail.dart';
-import '../../app/model/cocktail/cocktails_data.dart';
-import '../../datasource/config/cocktails/cocktails_data_client.dart';
+import '../../app/model/handler/data_response.dart';
+import '../../datasource/api/cocktails/cocktails_api_client.dart';
+import '../handler/extensions.dart';
+import '../handler/request_handler.dart';
 import 'mappers/cocktails_mapper.dart';
 
 class CocktailsRepository {
   CocktailsRepository({
-    required CocktailsConfigClient cocktailsConfigClient,
-  }) : _cocktailsConfigClient = cocktailsConfigClient;
+    required CocktailsApiClient cocktailsApiClient,
+    required RequestHandler requestHandler,
+  })  : _cocktailsApiClient = cocktailsApiClient,
+        _requestHandler = requestHandler;
 
-  final CocktailsConfigClient _cocktailsConfigClient;
+  final CocktailsApiClient _cocktailsApiClient;
+  final RequestHandler _requestHandler;
 
-  CocktailsData _cocktailsData = CocktailsData.empty();
-  bool _loaded = false;
+  Future<DataResponse<List<Cocktail>>> fetchCocktailsData() async {
+    final result = await _requestHandler.safeApiCall(
+      _cocktailsApiClient.fetchCocktails,
+    );
 
-  void _loadData() {
-    _cocktailsData = _cocktailsConfigClient.getData().toDomain();
+    return result.toDataResponse(
+      (data) => data.map((e) => e.toDomain()).toList(),
+    );
   }
-
-  CocktailsData get _loadedData {
-    if (_loaded) {
-      return _cocktailsData;
-    }
-    _loadData();
-    _loaded = true;
-    return _cocktailsData;
-  }
-
-  List<Cocktail> get cocktails => _loadedData.cocktails;
 }

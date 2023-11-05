@@ -19,14 +19,6 @@ extension NetworkResultExtensions<U> on NetworkResult<U> {
 
 extension ExceptionToDomainExtension on Exception {
   RequestError toRequestError() {
-    final exception = this;
-
-    if (exception is BadRequestException) {
-      return GenericError(message: exception.message);
-    } else if (exception is ConnectionException) {
-      return ConnectionError();
-    } else {
-      return GenericError();
-    }
+    return GenericError();
   }
 }

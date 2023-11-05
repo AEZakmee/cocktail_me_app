@@ -126,7 +126,6 @@ linter:
     no_leading_underscores_for_library_prefixes: true
     no_leading_underscores_for_local_identifiers: true
     null_check_on_nullable_type_parameter: true
-    one_member_abstracts: true
     only_throw_errors: true
     parameter_assignments: true
     prefer_expression_function_bodies: false
@@ -138,7 +137,6 @@ linter:
     sort_child_properties_last: true
     sort_unnamed_constructors_first: true
     sort_constructors_first: true
-    unawaited_futures: true
     unnecessary_constructor_name: true
     unnecessary_lambdas: true
     unnecessary_late: true

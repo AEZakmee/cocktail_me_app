@@ -1,12 +1,14 @@
 import '../../../app/model/cocktail/cocktail.dart';
+import '../../../app/model/handler/data_response.dart';
 import '../../../repository/cocktalis/cocktails_repo.dart';
 
-class GetCocktailsUseCase {
-  GetCocktailsUseCase({
+class FetchCocktailsUseCase {
+  FetchCocktailsUseCase({
     required CocktailsRepository cocktailsRepo,
   }) : _cocktailsRepo = cocktailsRepo;
 
   final CocktailsRepository _cocktailsRepo;
 
-  List<Cocktail> call() => _cocktailsRepo.cocktails;
+  Future<DataResponse<List<Cocktail>>> call() =>
+      _cocktailsRepo.fetchCocktailsData();
 }
