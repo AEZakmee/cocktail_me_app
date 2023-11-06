@@ -68,3 +68,6 @@ flutter:
 
         - asset: fonts/quicksand/Quicksand-Light.ttf
           weight: 300
+    - family: CocktailMe
+      fonts:
+        - asset: fonts/icons/CocktailMe.ttf

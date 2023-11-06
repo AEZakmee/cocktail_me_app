@@ -17,7 +17,7 @@ import '../../domain/usecases/cocktails/fetch_coctails_use_case.dart';
 import '../../firebase_options.dart';
 import '../../presentation/app/main_viewmodel.dart';
 import '../../presentation/home/home_viewmodel.dart';
-import '../../presentation/welcome/welcome_viewmodel.dart';
+import '../../presentation/login/signin_viewmodel.dart';
 import '../../repository/cocktalis/cocktails_repo.dart';
 import '../../repository/handler/request_handler.dart';
 import '../../repository/settings/settings_repo.dart';
@@ -145,7 +145,7 @@ Future<void> registerDependencies() async {
       ),
     )
     ..registerFactory(
-      () => WelcomeViewModel(
+      () => SignInViewModel(
         auth: locator(),
       ),
     );

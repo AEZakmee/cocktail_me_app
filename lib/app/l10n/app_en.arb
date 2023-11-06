@@ -1,5 +1,16 @@
 {
-  "helloText" : "Hello",
-  "login" : "Login",
-  "logout" : "Logout"
+  "emailHint" : "Enter Email",
+  "passwordHint" : "Enter Password",
+  "signIn" : "LOGIN",
+  "signOut" : "Sign Out",
+  "title" : "CocktailMe",
+  "subtitle" : "Cocktail Creations Made Effortless",
+  "loginPopupTitle" : "Unlock the Art of Mixology with Us!",
+  "doNotHaveAccountQuestion": "Don't have an account? ",
+  "signUpNow" : "Sign Up Now",
+  "forgotPasswordQuestion": "Forgot password?",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+  "continueAsGuest": "Continue as Guest",
+  "createAccount": "Create account"
 }
