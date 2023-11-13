@@ -1,5 +1,4 @@
 import '../../domain/services/auth_service.dart';
-import '../app/router.dart';
 import '../utils/base_viewmodel.dart';
 
 final class SignInViewModel extends BaseViewModel {
@@ -7,11 +6,9 @@ final class SignInViewModel extends BaseViewModel {
 
   final Auth _auth;
 
-  Future<void> signIn() async {
+  Future<void> signInAnonymously() async {
     await _auth.signInAnonymously();
-    await navigatorKey.currentState?.pushNamedAndRemoveUntil(
-      Routes.home,
-      (route) => false,
-    );
   }
+
+  void signIn() {}
 }

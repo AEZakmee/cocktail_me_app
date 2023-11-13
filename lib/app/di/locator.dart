@@ -18,6 +18,7 @@ import '../../firebase_options.dart';
 import '../../presentation/app/main_viewmodel.dart';
 import '../../presentation/home/home_viewmodel.dart';
 import '../../presentation/login/signin_viewmodel.dart';
+import '../../presentation/signup/signup_viewmodel.dart';
 import '../../repository/cocktalis/cocktails_repo.dart';
 import '../../repository/handler/request_handler.dart';
 import '../../repository/settings/settings_repo.dart';
@@ -146,6 +147,11 @@ Future<void> registerDependencies() async {
     )
     ..registerFactory(
       () => SignInViewModel(
+        auth: locator(),
+      ),
+    )
+    ..registerFactory(
+      () => SignUpViewModel(
         auth: locator(),
       ),
     );

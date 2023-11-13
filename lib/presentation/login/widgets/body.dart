@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../app/router.dart';
 import '../../model/login_button_type.dart';
 import '../../utils/extensions.dart';
 import '../../widgets/app_text_form_field.dart';
@@ -64,15 +67,39 @@ class Body extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: context.read<SignInViewModel>().signIn,
-              child: Text(context.localizations.signIn),
+              child: Text(context.localizations.signInButton),
             ),
             const SizedBox(
               height: 16,
             ),
             InkWell(
               onTap: () async {
-                final buttonClicked = await openSignUpPopup(context);
-                print(buttonClicked);
+                final buttonType = await openSignUpPopup(context);
+                switch (buttonType) {
+                  case LoginButtonType.google:
+                    log('Google');
+
+                  case LoginButtonType.apple:
+                    log('Apple');
+
+                  case LoginButtonType.anonymous:
+                    if (context.mounted) {
+                      await context.read<SignInViewModel>().signInAnonymously();
+                    }
+                    if (context.mounted) {
+                      await Navigator.of(context).pushNamedAndRemoveUntil(
+                        Routes.home,
+                        (route) => false,
+                      );
+                    }
+
+                  case LoginButtonType.register:
+                    if (context.mounted) {
+                      Navigator.of(context).pushReplacementNamed(Routes.signup);
+                    }
+
+                  case null:
+                }
               },
               child: RichText(
                 text: TextSpan(
@@ -93,10 +120,15 @@ class Body extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Text(
-              context.localizations.forgotPasswordQuestion,
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: context.colors.surfaceColor,
+            InkWell(
+              onTap: () {
+                log('Forgot pass click');
+              },
+              child: Text(
+                context.localizations.forgotPasswordQuestion,
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.colors.surfaceColor,
+                ),
               ),
             ),
             const SizedBox(

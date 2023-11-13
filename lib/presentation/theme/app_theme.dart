@@ -41,14 +41,14 @@ class AppTheme {
       Brightness.light => const ColorScheme.light().copyWith(
           secondary: _colors.secondaryColor,
           primary: _colors.primaryColor,
-          background: _colors.surfaceColor,
+          background: _colors.primaryColor,
           error: _colors.errorColor,
           brightness: Brightness.light,
         ),
       Brightness.dark => const ColorScheme.dark().copyWith(
           secondary: _colors.secondaryColor,
           primary: _colors.primaryColor,
-          background: _colors.surfaceColor,
+          background: _colors.primaryColor,
           error: _colors.errorColor,
           brightness: Brightness.dark,
         ),
@@ -109,13 +109,14 @@ class AppTheme {
           foregroundColor: MaterialStatePropertyAll<Color?>(
             _colors.primaryColor,
           ),
-          elevation: const MaterialStatePropertyAll<double?>(0),
-          shadowColor: const MaterialStatePropertyAll<Color?>(
-            Colors.transparent,
+          overlayColor: MaterialStatePropertyAll<Color?>(
+            _colors.primaryColor?.withOpacity(0.1),
           ),
+          elevation: const MaterialStatePropertyAll<double?>(0),
           textStyle: MaterialStatePropertyAll<TextStyle?>(
             _textTheme.titleLarge,
           ),
+          enableFeedback: true,
           minimumSize: const MaterialStatePropertyAll<Size?>(
             Size(double.infinity, 60),
           ),
@@ -136,9 +137,6 @@ class AppTheme {
             _colors.textColor,
           ),
           elevation: const MaterialStatePropertyAll<double?>(0),
-          shadowColor: const MaterialStatePropertyAll<Color?>(
-            Colors.transparent,
-          ),
           textStyle: MaterialStatePropertyAll<TextStyle?>(
             _textTheme.titleLarge,
           ),

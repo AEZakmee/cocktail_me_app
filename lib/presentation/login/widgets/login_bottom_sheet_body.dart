@@ -49,7 +49,7 @@ class LoginBottomSheetBody extends StatelessWidget {
             label: Text(context.localizations.continueWithApple),
             icon: const Padding(
               padding: EdgeInsets.only(
-                right: 8,
+                right: 4,
               ),
               child: Icon(
                 CocktailMeIcons.apple,
@@ -65,7 +65,7 @@ class LoginBottomSheetBody extends StatelessWidget {
             label: Text(context.localizations.continueAsGuest),
             icon: const Padding(
               padding: EdgeInsets.only(
-                right: 8,
+                right: 6,
               ),
               child: Icon(
                 CocktailMeIcons.incognito,

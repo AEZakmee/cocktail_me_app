@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../home/home_screen.dart';
 import '../login/signin_screen.dart';
+import '../signup/signup_screen.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -19,6 +20,10 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     case Routes.initial:
       return MaterialPageRoute(
         builder: (_) => const SignInScreen(),
+      );
+    case Routes.signup:
+      return MaterialPageRoute(
+        builder: (_) => const SignUpScreen(),
       );
     case Routes.home:
       return MaterialPageRoute(
