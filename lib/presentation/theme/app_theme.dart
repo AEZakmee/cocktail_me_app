@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/radius_const.dart';
-import '../constants/spacing_const.dart';
 import 'app_colors.dart';
 
 const fontFamily = 'Roboto';
@@ -21,17 +19,19 @@ class AppTheme {
         primaryColor: _colors.primaryColor,
         colorScheme: _colorScheme,
         appBarTheme: AppBarTheme(
-          backgroundColor: _colors.secondaryColor,
+          backgroundColor: _colors.surfaceColor,
         ),
         textTheme: _textTheme,
         textSelectionTheme: _textSelectionTheme,
         inputDecorationTheme: _inputDecorationTheme,
         elevatedButtonTheme: _elevatedButtonTheme,
+        bottomSheetTheme: _bottomSheetTheme,
+        textButtonTheme: _textButtonTheme,
       );
 
   AppColors get _colors {
     return switch (_brightness) {
-      Brightness.light => AppColors.dark(),
+      Brightness.light => AppColors.light(),
       Brightness.dark => AppColors.dark(),
     };
   }
@@ -41,137 +41,177 @@ class AppTheme {
       Brightness.light => const ColorScheme.light().copyWith(
           secondary: _colors.secondaryColor,
           primary: _colors.primaryColor,
-          background: _colors.surfaceColor,
+          background: _colors.primaryColor,
           error: _colors.errorColor,
           brightness: Brightness.light,
         ),
       Brightness.dark => const ColorScheme.dark().copyWith(
           secondary: _colors.secondaryColor,
           primary: _colors.primaryColor,
-          background: _colors.surfaceColor,
+          background: _colors.primaryColor,
           error: _colors.errorColor,
           brightness: Brightness.dark,
         ),
     };
   }
 
+  BottomSheetThemeData get _bottomSheetTheme => BottomSheetThemeData(
+        backgroundColor: _colors.surfaceColor,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(32),
+            topRight: Radius.circular(32),
+          ),
+        ),
+      );
+
   TextSelectionThemeData get _textSelectionTheme => TextSelectionThemeData(
-        cursorColor: _colors.secondaryColor,
+        cursorColor: _colors.surfaceColor,
       );
 
   InputDecorationTheme get _inputDecorationTheme => InputDecorationTheme(
         filled: true,
-        fillColor: _colors.primaryColor?.withOpacity(0.2),
-        prefixIconColor: _colors.textColor,
+        fillColor: _colors.surfaceColor?.withOpacity(0.05),
+        prefixIconColor: _colors.primaryColor,
         hintStyle: TextStyle(
-          color: _colors.textColor?.withOpacity(0.5),
+          color: _colors.surfaceColor,
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: _colors.primaryColor!,
+            color: _colors.surfaceColor!.withOpacity(0.5),
+            width: 0.5,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(RadiusConst.xl)),
+          borderRadius: const BorderRadius.all(Radius.circular(32)),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: _colors.primaryColor!,
+            color: _colors.surfaceColor!,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(RadiusConst.xl)),
+          borderRadius: const BorderRadius.all(Radius.circular(32)),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: _colors.primaryColor!,
-            width: 2,
+            color: _colors.surfaceColor!,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(RadiusConst.xl)),
+          borderRadius: const BorderRadius.all(Radius.circular(32)),
         ),
         contentPadding: const EdgeInsets.symmetric(
-          vertical: SpacingConst.md,
-          horizontal: SpacingConst.xs,
+          vertical: 16,
+          horizontal: 8,
         ),
       );
 
   ElevatedButtonThemeData get _elevatedButtonTheme => ElevatedButtonThemeData(
         style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll<Color?>(
+            _colors.surfaceColor,
+          ),
+          foregroundColor: MaterialStatePropertyAll<Color?>(
             _colors.primaryColor,
           ),
-          foregroundColor: MaterialStatePropertyAll<Color?>(_colors.textColor),
-          elevation: const MaterialStatePropertyAll<double?>(0),
-          shadowColor: const MaterialStatePropertyAll<Color?>(
-            Colors.transparent,
+          overlayColor: MaterialStatePropertyAll<Color?>(
+            _colors.primaryColor?.withOpacity(0.1),
           ),
+          elevation: const MaterialStatePropertyAll<double?>(0),
           textStyle: MaterialStatePropertyAll<TextStyle?>(
             _textTheme.titleLarge,
           ),
+          enableFeedback: true,
           minimumSize: const MaterialStatePropertyAll<Size?>(
-            Size(double.infinity, 64),
+            Size(double.infinity, 60),
           ),
           shape: MaterialStatePropertyAll<OutlinedBorder?>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(RadiusConst.xl),
+              borderRadius: BorderRadius.circular(32),
             ),
           ),
         ),
       );
 
-  TextTheme get _textTheme => const TextTheme(
-        displayLarge: TextStyle(
+  TextButtonThemeData get _textButtonTheme => TextButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: const MaterialStatePropertyAll<Color?>(
+            Colors.transparent,
+          ),
+          foregroundColor: MaterialStatePropertyAll<Color?>(
+            _colors.textColor,
+          ),
+          elevation: const MaterialStatePropertyAll<double?>(0),
+          textStyle: MaterialStatePropertyAll<TextStyle?>(
+            _textTheme.titleLarge,
+          ),
+          minimumSize: const MaterialStatePropertyAll<Size?>(
+            Size(double.infinity, 60),
+          ),
+          shape: MaterialStatePropertyAll<OutlinedBorder?>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(32),
+              side: BorderSide(
+                color: _colors.textColor!.withOpacity(0.2),
+              ),
+            ),
+          ),
+        ),
+      );
+
+  TextTheme get _textTheme => TextTheme(
+        displayLarge: const TextStyle(
           fontSize: 48,
           fontWeight: FontWeight.w700,
           fontFamily: fontFamily,
         ),
-        displayMedium: TextStyle(
-          fontSize: 42,
+        displayMedium: const TextStyle(
+          fontSize: 38,
           fontWeight: FontWeight.w700,
           fontFamily: fontFamily,
         ),
-        displaySmall: TextStyle(
-          fontSize: 36,
+        displaySmall: const TextStyle(
+          fontSize: 32,
           fontWeight: FontWeight.w600,
           fontFamily: fontFamily,
         ),
-        labelLarge: TextStyle(
-          fontSize: 30,
+        labelLarge: const TextStyle(
+          fontSize: 26,
           fontWeight: FontWeight.w700,
           fontFamily: fontFamily,
         ),
-        labelMedium: TextStyle(
-          fontSize: 26,
-          fontWeight: FontWeight.w500,
-          fontFamily: fontFamily,
-        ),
-        labelSmall: TextStyle(
+        labelMedium: const TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.w500,
           fontFamily: fontFamily,
         ),
-        titleLarge: TextStyle(
+        labelSmall: const TextStyle(
           fontSize: 20,
+          fontWeight: FontWeight.w500,
+          fontFamily: fontFamily,
+        ),
+        titleLarge: const TextStyle(
+          fontSize: 18,
           fontWeight: FontWeight.w600,
           fontFamily: fontFamily,
         ),
         titleMedium: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w400,
-          fontFamily: fontFamily,
-        ),
-        titleSmall: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
+          color: _colors.surfaceColor,
           fontFamily: fontFamily,
         ),
-        bodyLarge: TextStyle(
+        titleSmall: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w400,
           fontFamily: fontFamily,
         ),
-        bodyMedium: TextStyle(
+        bodyLarge: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          fontFamily: fontFamily,
+        ),
+        bodyMedium: const TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w400,
           fontFamily: fontFamily,
         ),
-        bodySmall: TextStyle(
+        bodySmall: const TextStyle(
           fontSize: 10,
           fontWeight: FontWeight.w400,
           fontFamily: fontFamily,

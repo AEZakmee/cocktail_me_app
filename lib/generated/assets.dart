@@ -3,6 +3,8 @@ class Assets {
   Assets._();
 
   static const String dataCocktails = 'assets/data/cocktails.json';
+  static const String iconsCocktailMe = 'fonts/icons/CocktailMe.ttf';
+  static const String iconsConfig = 'assets/icons/config.json';
   static const String quicksandQuicksandBold =
       'fonts/quicksand/Quicksand-Bold.ttf';
   static const String quicksandQuicksandLight =
