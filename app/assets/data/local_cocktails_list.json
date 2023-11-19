@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "Luxury Taste",
+    "category": "Cocktail",
+    "alcoholic": true,
+    "details": {
+      "glass": "Long",
+      "type": "Summer",
+      "strength": 15
+    },
+    "image": {
+      "type": "Local",
+      "url": ""
+    },
+    "instructions": [
+      "This is some description for the cocktail",
+      "This is some description for the cocktail",
+      "This is some description for the cocktail"
+    ],
+    "ingredients": [
+      {
+        "item": {
+          "id": "1",
+          "title": "Vodka",
+          "icon": "Bottle"
+        },
+        "measure": "50 ml"
+      }
+    ]
+  }
+]
