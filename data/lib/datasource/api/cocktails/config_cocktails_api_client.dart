@@ -1,4 +1,4 @@
-import 'package:core/services/remote_config.dart';
+import 'package:domain/services/remote_config.dart';
 
 import '../../models/cocktail_response.dart';
 import 'cocktails_api_client.dart';

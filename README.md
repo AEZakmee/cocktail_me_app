@@ -8,7 +8,7 @@ and running.
 
 The Cocktail Me App is built following a clean architecture, which is organized into the following modules:
 
-1. Core: This module contains reusable components as well as firebase configurations and authentication.
+1. App: This module is responsible for injecting and setting up all the dependencies.
 2. Data: This module manages data sources, such as APIs and databases as well as repository logic.
 3. Domain: The domain module contains the core business logic and entities of the application.
 4. Presentation: This is the user interface module, responsible for rendering the app's screens and handling user

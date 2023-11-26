@@ -1,6 +1,6 @@
-import 'package:core/model/cocktail/cocktail.dart';
-import 'package:core/model/handler/data_response.dart';
-import 'package:data/repository/cocktalis/cocktails_repo.dart';
+import '../../model/cocktail/cocktail.dart';
+import '../../model/handler/data_response.dart';
+import '../../repositories/cocktails_repository.dart';
 
 class FetchCocktailsUseCase {
   FetchCocktailsUseCase({

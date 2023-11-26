@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:dependencies/exposer.dart';
 
 import '../constants/remote_config_consts.dart';
 import '../model/cocktails_api_type.dart';

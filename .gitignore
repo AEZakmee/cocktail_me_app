@@ -7,6 +7,9 @@ GoogleService-info*
 *.iml
 .idea/
 
+# VSCode related
+.vscode/
+
 # Flutter/Dart/Pub related
 pubspec.lock
 .flutter-plugins

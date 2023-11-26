@@ -1,6 +1,6 @@
-import 'package:core/di/locator.dart';
 import 'package:flutter/material.dart';
 
+import '../app/di/locator.dart';
 import '../utils/viewmodel_builder.dart';
 import '../widgets/app_scaffold.dart';
 import 'signin_viewmodel.dart';

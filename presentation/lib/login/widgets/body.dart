@@ -95,7 +95,9 @@ class Body extends StatelessWidget {
 
                   case LoginButtonType.register:
                     if (context.mounted) {
-                      Navigator.of(context).pushReplacementNamed(Routes.signup);
+                      await Navigator.of(context).pushReplacementNamed(
+                        Routes.signup,
+                      );
                     }
 
                   case null:

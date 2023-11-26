@@ -9,13 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dependencies:
+    path: ../common/dependencies
 
-  core:
-    path: ../core
-  data:
-    path: ../data
+  utils:
+    path: ../libs/utils
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  dev_dependencies:
+    path: ../common/dev_dependencies
