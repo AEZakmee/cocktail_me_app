@@ -1,23 +1,8 @@
-import 'package:core/di/di.dart';
-import 'package:data/di.dart';
-import 'package:domain/di.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:presentation/app/app.dart';
-import 'package:presentation/di.dart';
 
-import 'firebase_options.dart';
-
-Future<void> registerApp() async {
-  final app = await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  await registerCore(app);
-  await registerData();
-  await registerDomain();
-  await registerPresentation();
-}
+import 'di/setup.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +23,7 @@ Future<void> main() async {
     ),
   );
 
-  await registerApp();
+  await setupDependencies();
 
   runApp(
     const MobileApp(),

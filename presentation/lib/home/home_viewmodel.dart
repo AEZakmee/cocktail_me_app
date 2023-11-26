@@ -1,7 +1,7 @@
-import 'package:core/model/cocktail/cocktail.dart';
-import 'package:core/services/auth.dart';
-import 'package:core/utils/extensions.dart';
+import 'package:domain/model/cocktail/cocktail.dart';
+import 'package:domain/services/auth.dart';
 import 'package:domain/usecases/cocktails/fetch_coctails_use_case.dart';
+import 'package:domain/utils/extensions.dart';
 
 import '../utils/base_viewmodel.dart';
 

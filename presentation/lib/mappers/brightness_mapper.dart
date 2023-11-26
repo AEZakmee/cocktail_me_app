@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:core/model/theme_type.dart';
+import 'package:domain/model/theme_type.dart';
 
 extension BrightnessMapper on Brightness {
   ThemeType toThemeType() => switch (this) {

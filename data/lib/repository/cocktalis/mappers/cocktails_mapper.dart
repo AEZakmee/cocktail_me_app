@@ -1,4 +1,4 @@
-import 'package:core/model/cocktail/cocktail.dart';
+import 'package:domain/model/cocktail/cocktail.dart';
 
 import '../../../datasource/models/cocktail_response.dart';
 

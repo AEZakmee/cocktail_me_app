@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../model/login_button_type.dart';
 import '../../theme/cocktail_me_icons.dart';
 import '../../utils/extensions.dart';
+import '../../widgets/button_icon_wrapper.dart';
 
 class LoginBottomSheetBody extends StatelessWidget {
   const LoginBottomSheetBody({super.key});
@@ -28,50 +29,43 @@ class LoginBottomSheetBody extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          TextButton.icon(
-            onPressed: () => Navigator.pop(context, LoginButtonType.google),
-            label: Text(context.localizations.continueWithGoogle),
-            icon: const Padding(
-              padding: EdgeInsets.only(
-                right: 8,
-              ),
-              child: Icon(
-                CocktailMeIcons.google,
-                size: 25,
-              ),
+          ButtonIconWrapper(
+            icon: const Icon(
+              CocktailMeIcons.google,
+              size: 23,
+            ),
+            child: TextButton(
+              onPressed: () => Navigator.pop(context, LoginButtonType.google),
+              child: Text(context.localizations.continueWithGoogle),
             ),
           ),
           const SizedBox(
             height: 8,
           ),
-          TextButton.icon(
-            onPressed: () => Navigator.pop(context, LoginButtonType.apple),
-            label: Text(context.localizations.continueWithApple),
-            icon: const Padding(
-              padding: EdgeInsets.only(
-                right: 6,
-              ),
-              child: Icon(
-                CocktailMeIcons.apple,
-                size: 35,
-              ),
+          ButtonIconWrapper(
+            icon: const Icon(
+              CocktailMeIcons.apple,
+              size: 32,
+            ),
+            child: TextButton(
+              onPressed: () => Navigator.pop(context, LoginButtonType.apple),
+              child: Text(context.localizations.continueWithApple),
             ),
           ),
           const SizedBox(
             height: 8,
           ),
-          TextButton.icon(
-            onPressed: () => Navigator.pop(context, LoginButtonType.anonymous),
-            label: Text(context.localizations.continueAsGuest),
-            icon: const Padding(
-              padding: EdgeInsets.only(
-                left: 10,
-                right: 8,
+          ButtonIconWrapper(
+            icon: const Icon(
+              CocktailMeIcons.incognito,
+              size: 32,
+            ),
+            child: TextButton(
+              onPressed: () => Navigator.pop(
+                context,
+                LoginButtonType.anonymous,
               ),
-              child: Icon(
-                CocktailMeIcons.incognito,
-                size: 30,
-              ),
+              child: Text(context.localizations.continueAsGuest),
             ),
           ),
           const SizedBox(

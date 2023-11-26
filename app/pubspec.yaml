@@ -1,5 +1,5 @@
 name: cocktail_me_app
-description: Starting point of a provider application.
+description: App about cocktails
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,9 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dependencies:
+    path: ../common/dependencies
 
-  core:
-    path: ../core
   data:
     path: ../data
   domain:
@@ -19,18 +19,11 @@ dependencies:
   presentation:
     path: ../presentation
 
-  get_it: any
-  firebase_core: ^2.21.0
-  firebase_analytics: ^10.7.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  flutter_lints: ^2.0.0
-
-flutter_intl:
-  enabled: false
+  dev_dependencies:
+    path: ../common/dev_dependencies
 
 flutter:
   uses-material-design: true

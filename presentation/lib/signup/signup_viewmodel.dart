@@ -1,4 +1,4 @@
-import 'package:core/services/auth.dart';
+import 'package:domain/services/auth.dart';
 
 import '../utils/base_viewmodel.dart';
 
@@ -7,5 +7,7 @@ final class SignUpViewModel extends BaseViewModel {
 
   final Auth _auth;
 
-  void signUp() {}
+  void signUp() {
+    _auth.signInAnonymously();
+  }
 }

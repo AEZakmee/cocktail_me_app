@@ -1,4 +1,4 @@
-import 'package:core/services/auth.dart';
+import 'package:domain/services/auth.dart';
 
 import '../utils/base_viewmodel.dart';
 
