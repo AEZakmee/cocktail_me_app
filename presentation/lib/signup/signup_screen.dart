@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/di/locator.dart';
 import '../utils/viewmodel_builder.dart';
-import '../widgets/app_scaffold.dart';
+import '../widgets/auth_scaffold.dart';
 import 'signup_viewmodel.dart';
 import 'widgets/body.dart';
 
@@ -12,7 +12,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ViewModelBuilder<SignUpViewModel>(
         viewModelBuilder: locator,
-        builder: (context, viewModel) => const AppScaffold(
+        builder: (context, viewModel) => const AuthScaffold(
           body: Body(),
         ),
       );
