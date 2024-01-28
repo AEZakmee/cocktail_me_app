@@ -1,4 +1,4 @@
-import 'package:dependencies/exposer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Auth {
   Auth({

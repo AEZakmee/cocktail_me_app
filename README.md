@@ -28,9 +28,20 @@ Before you can run the Cocktail Me App, please follow these steps:
    following command with the Firebase CLI:
 
 ```shell
+curl -sL https://firebase.tools | bash
+
 firebase login
 
 dart pub global activate flutterfire_cli
 
+cd app
 flutterfire configure
 ```
+
+3. Flutter gen:
+
+```shell
+./run_build_runner_packages
+./run_flutter_gen_l10n
+```
+
