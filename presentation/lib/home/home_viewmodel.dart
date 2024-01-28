@@ -1,37 +1,32 @@
-import 'package:domain/model/cocktail/cocktail.dart';
 import 'package:domain/services/auth.dart';
-import 'package:domain/usecases/cocktails/fetch_coctails_use_case.dart';
-import 'package:domain/utils/extensions.dart';
+import 'package:flutter/material.dart';
 
 import '../utils/base_viewmodel.dart';
 
 final class HomeViewModel extends BaseViewModel {
   HomeViewModel({
-    required FetchCocktailsUseCase fetchCocktailsUseCase,
     required Auth auth,
-  })  : _fetchCocktailsUseCase = fetchCocktailsUseCase,
-        _auth = auth;
+  }) : _auth = auth;
 
-  final FetchCocktailsUseCase _fetchCocktailsUseCase;
   final Auth _auth;
 
-  List<Cocktail> _cocktails = List.empty();
+  final pageController = PageController(initialPage: 1);
+  int pageIndex = 1;
 
-  List<Cocktail> get cocktails => _cocktails;
-  int get cocktailsLength => cocktails.length;
+  Future<void> changePage(int index) async {
+    if (pageIndex == index) {
+      return;
+    }
 
-  @override
-  Future<void> init() async {
-    final response = await _fetchCocktailsUseCase();
+    pageIndex = index;
+    notifyListeners();
 
-    response.fold(
-      onSuccess: (data) {
-        _cocktails = data;
-        setSuccess();
-      },
-      onError: (_) {
-        setError();
-      },
+    await Future.delayed(const Duration(milliseconds: 50));
+
+    await pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
     );
   }
 

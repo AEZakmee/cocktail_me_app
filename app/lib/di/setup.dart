@@ -145,7 +145,6 @@ Future<void> setupDependencies() async {
     )
     ..registerFactory(
       () => HomeViewModel(
-        fetchCocktailsUseCase: locator(),
         auth: locator(),
       ),
     )

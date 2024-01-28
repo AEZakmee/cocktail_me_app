@@ -18,7 +18,7 @@ class AppColors extends ThemeExtension<AppColors> {
         accentColor: const Color(0xFFFFD166),
         surfaceColor: Colors.white,
         errorColor: const Color(0xFF911414),
-        textColor: Colors.white,
+        textColor: Colors.black,
       );
 
   factory AppColors.light() => AppColors(

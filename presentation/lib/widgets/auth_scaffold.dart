@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../utils/extensions.dart';
 
-class AppScaffold extends StatelessWidget {
-  const AppScaffold({required this.body, super.key});
+class AuthScaffold extends StatelessWidget {
+  const AuthScaffold({required this.body, super.key});
 
   final Widget body;
 

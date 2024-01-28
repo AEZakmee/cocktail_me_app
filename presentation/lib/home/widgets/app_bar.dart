@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../../app/main_viewmodel.dart';
+import '../../widgets/app_circle_avatar.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({super.key});
 
   @override
   Widget build(BuildContext context) => AppBar(
-        actions: [
-          IconButton(
-            onPressed: () => context.read<MainViewModel>().switchTheme(),
-            icon: const Icon(Icons.adjust),
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          onPressed: () => Scaffold.of(context).openDrawer(),
+          icon: const Icon(
+            Icons.menu,
+            size: 32,
+          ),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 12),
+            child: AppCircleAvatar(
+              imageUrl: '',
+              username: 'Kris',
+            ),
           ),
         ],
       );
