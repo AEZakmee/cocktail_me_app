@@ -19,6 +19,8 @@ dependencies:
     path: ../libs/localizations
   utils:
     path: ../libs/utils
+  side_navigation:
+    path: ../libs/side_navigation
 
   get_it: ^7.6.4
   provider: ^6.1.1

@@ -16,5 +16,8 @@
   "continueWithGoogle": "Continue with Google",
   "continueWithApple": "Continue with Apple",
   "continueAsGuest": "Continue as Guest",
-  "createAccount": "Create account"
+  "createAccount": "Create account",
+  "shots": "Shots",
+  "cocktails": "Cocktails",
+  "nonalcoholic": "Non alcoholic"
 }

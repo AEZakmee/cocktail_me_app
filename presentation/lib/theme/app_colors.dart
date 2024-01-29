@@ -15,17 +15,17 @@ class AppColors extends ThemeExtension<AppColors> {
         primaryColor: const Color(0xFF491552),
         primaryAccentColor: const Color(0xFF38173E),
         secondaryColor: const Color(0xFF4ba4c9),
-        accentColor: const Color(0xFFFFD166),
+        accentColor: const Color(0xFFFFDD66),
         surfaceColor: Colors.white,
         errorColor: const Color(0xFF911414),
-        textColor: Colors.black,
+        textColor: Colors.white,
       );
 
   factory AppColors.light() => AppColors(
         primaryColor: const Color(0xFFFF416F),
         primaryAccentColor: const Color(0xFFFF8277),
         secondaryColor: const Color(0xFF4ba4c9),
-        accentColor: const Color(0xFFFFD166),
+        accentColor: const Color(0xFFFFDD66),
         surfaceColor: Colors.white,
         errorColor: const Color(0xFF911414),
         textColor: Colors.black,
@@ -41,6 +41,11 @@ class AppColors extends ThemeExtension<AppColors> {
 
   final Color? errorColor;
   final Color? textColor;
+
+  final Color lightGrey = const Color(0xFF504E69);
+  final Color grey = const Color(0xFF20202C);
+  final Color darkGrey = const Color(0xFF15151C);
+  final Color black = const Color(0xFF060606);
 
   @override
   ThemeExtension<AppColors> copyWith({
