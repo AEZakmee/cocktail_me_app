@@ -4,7 +4,7 @@ import 'package:data/datasource/api/cocktails/config_cocktails_api_client.dart';
 import 'package:data/datasource/api/cocktails/local_cocktails_api_client.dart';
 import 'package:data/datasource/assets/cocktails/cocktails_asset_client.dart';
 import 'package:data/datasource/cache/settings/settings_cache_client.dart';
-import 'package:data/repository/cocktalis/cocktails_repo.dart';
+import 'package:data/repository/cocktalis/cocktails_repository.dart';
 import 'package:data/repository/handler/request_handler.dart';
 import 'package:data/repository/settings/settings_repo.dart';
 import 'package:data/storage.dart';
@@ -13,10 +13,11 @@ import 'package:domain/model/cocktails_api_type.dart';
 import 'package:domain/repositories/cocktails_repository.dart';
 import 'package:domain/repositories/settings_repository.dart';
 import 'package:domain/services/auth.dart';
+import 'package:domain/services/cocktails/cocktails_service.dart';
 import 'package:domain/services/localization_service.dart';
 import 'package:domain/services/remote_config.dart';
 import 'package:domain/services/theme_service.dart';
-import 'package:domain/usecases/cocktails/fetch_coctails_use_case.dart';
+import 'package:domain/usecases/cocktails/load_coctails_use_case.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,6 +25,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:hive/hive.dart';
 import 'package:presentation/app/main_viewmodel.dart';
 import 'package:presentation/home/home_viewmodel.dart';
+import 'package:presentation/home/pages/home/home_page_viewmodel.dart';
 import 'package:presentation/login/signin_viewmodel.dart';
 import 'package:presentation/signup/signup_viewmodel.dart';
 
@@ -127,10 +129,15 @@ Future<void> setupDependencies() async {
         settingsRepository: locator(),
       ),
     )
+    ..registerLazySingleton(
+      () => CocktailService(
+        cocktailsRepo: locator(),
+      ),
+    )
 
     ///Use Cases
     ..registerLazySingleton(
-      () => FetchCocktailsUseCase(
+      () => LoadCocktailsUseCase(
         cocktailsRepo: locator(),
       ),
     )
@@ -145,7 +152,13 @@ Future<void> setupDependencies() async {
     )
     ..registerFactory(
       () => HomeViewModel(
+        loadCocktailsUseCase: locator(),
         auth: locator(),
+      ),
+    )
+    ..registerFactory(
+      () => HomePageViewModel(
+        cocktailService: locator(),
       ),
     )
     ..registerFactory(

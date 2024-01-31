@@ -1,6 +1,6 @@
 import 'package:domain/services/remote_config.dart';
 
-import '../../models/cocktail_response.dart';
+import '../../models/cocktail/cocktail_response.dart';
 import 'cocktails_api_client.dart';
 
 class ConfigCocktailsApiClient implements CocktailsApiClient {

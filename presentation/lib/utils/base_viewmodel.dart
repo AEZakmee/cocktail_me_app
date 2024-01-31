@@ -5,10 +5,14 @@ import 'package:flutter/material.dart';
 import '../model/ui_state.dart';
 
 abstract base class BaseViewModel extends ChangeNotifier {
+  BaseViewModel({
+    UIState uiState = UIState.loading,
+  }) : _uiState = uiState;
+
   bool _isDisposed = false;
   final List<StreamSubscription<dynamic>> _subscriptions = [];
 
-  UIState _uiState = UIState.loading;
+  UIState _uiState;
   UIState get uiState => _uiState;
 
   void setLoading() {

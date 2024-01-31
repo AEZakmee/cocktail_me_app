@@ -2,13 +2,11 @@
   {
     "id": "1",
     "title": "Luxury Taste",
-    "category": "Cocktail",
-    "alcoholic": true,
-    "details": {
-      "glass": "Long",
-      "type": "Summer",
-      "strength": 15
-    },
+    "description": "This is the best cocktail ever",
+    "category": "COCKTAIL",
+    "strength": "STRONG",
+    "glass": "Long",
+    "rating": 3.0,
     "image": {
       "type": "Local",
       "url": ""
@@ -20,12 +18,8 @@
     ],
     "ingredients": [
       {
-        "item": {
-          "id": "1",
-          "title": "Vodka",
-          "icon": "Bottle"
-        },
-        "measure": "50 ml"
+        "id": "vodka",
+        "quantity": "50 ml"
       }
     ]
   }
