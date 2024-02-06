@@ -11,4 +11,11 @@ extension DataResponseExtension<T> on DataResponse<T> {
     }
     return onError?.call(error ?? GenericError());
   }
+
+  DataResponse<T> mapData(T Function(T data) mapper) {
+    return DataResponse<T>(
+      data: data != null ? mapper(data as T) : null,
+      error: error,
+    );
+  }
 }

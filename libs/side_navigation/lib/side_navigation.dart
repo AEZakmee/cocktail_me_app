@@ -11,6 +11,7 @@ class SideNavigation extends StatelessWidget {
   const SideNavigation({
     required this.elements,
     required this.selectedIndex,
+    this.onTap,
     this.sideNavigationPosition = SideNavigationPosition.leading,
     this.selectedIconColor,
     this.unselectedIconColor,
@@ -21,6 +22,7 @@ class SideNavigation extends StatelessWidget {
 
   final List<SideNavigationElement> elements;
   final int selectedIndex;
+  final Function(int)? onTap;
   final Color? selectedIconColor;
   final Color? unselectedIconColor;
   final TextStyle? selectedTextStyle;
@@ -29,45 +31,54 @@ class SideNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Indexer(
-          children: List.generate(
-            elements.length,
-            (index) {
-              final element = elements[index];
-              final isSelected = index == selectedIndex;
-              return Indexed(
-                index: isSelected ? 5 : elements.length - index,
-                child: Padding(
-                  padding: EdgeInsets.only(top: (160 * index).toDouble()),
-                  child: HalfSidedHexagon(
-                    inverted: sideNavigationPosition.isInverted(),
-                    color: isSelected
-                        ? element.selectedColor
-                        : element.unselectedColor,
-                    icon: Icon(
-                      element.iconData,
-                      size: 32,
-                      color:
-                          isSelected ? selectedIconColor : unselectedIconColor,
+    return SizedBox(
+      width: 80,
+      child: Stack(
+        children: [
+          Indexer(
+            children: List.generate(
+              elements.length,
+              (index) {
+                final element = elements[index];
+                final isSelected = index == selectedIndex;
+                return Indexed(
+                  index: elements.length - index,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: (160 * index).toDouble()),
+                    child: HalfSidedHexagon(
+                      onTap: () {
+                        if (onTap != null) {
+                          onTap!(index);
+                        }
+                      },
+                      inverted: sideNavigationPosition.isInverted(),
+                      color: isSelected
+                          ? element.selectedColor
+                          : element.unselectedColor,
+                      icon: Icon(
+                        element.iconData,
+                        size: 32,
+                        color: isSelected
+                            ? selectedIconColor
+                            : unselectedIconColor,
+                      ),
+                      text: (element.label != null)
+                          ? Text(
+                              element.label!,
+                              textAlign: TextAlign.center,
+                              style: isSelected
+                                  ? selectedTextStyle
+                                  : unselectedTextStyle,
+                            )
+                          : null,
                     ),
-                    text: (element.label != null)
-                        ? Text(
-                            element.label!,
-                            textAlign: TextAlign.center,
-                            style: isSelected
-                                ? selectedTextStyle
-                                : unselectedTextStyle,
-                          )
-                        : null,
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -1,0 +1,4 @@
+enum IngredientIcon {
+  bottle,
+  other,
+}

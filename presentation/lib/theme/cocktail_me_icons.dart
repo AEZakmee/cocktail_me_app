@@ -31,6 +31,8 @@ class CocktailMeIcons {
       IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData apple =
       IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData whiskey =
+      IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData sad =
       IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

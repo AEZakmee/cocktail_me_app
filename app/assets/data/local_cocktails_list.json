@@ -1,32 +1,246 @@
 [
   {
-    "id": "1",
-    "title": "Luxury Taste",
-    "category": "Cocktail",
-    "alcoholic": true,
-    "details": {
-      "glass": "Long",
-      "type": "Summer",
-      "strength": 15
-    },
+    "id": "2",
+    "title": "Tropical Bliss",
+    "description": "Experience the paradise in a glass with this tropical delight.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Hurricane",
+    "rating": 4.5,
     "image": {
-      "type": "Local",
-      "url": ""
+      "type": "Remote",
+      "url": "https://www.liquor.com/thmb/clZPgg_zR19i4AsOTEuhdeWI_Bs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tropical_Bliss_Cocktail_Image-4416b8395efd4a3986c209371e628e63.jpg"
     },
     "instructions": [
-      "This is some description for the cocktail",
-      "This is some description for the cocktail",
-      "This is some description for the cocktail"
+      "Fill a shaker with ice.",
+      "Add 50 ml of rum, 30 ml of pineapple juice, and 20 ml of coconut cream.",
+      "Shake well until chilled.",
+      "Strain into a hurricane glass filled with ice.",
+      "Garnish with pineapple chunks and a cherry.",
+      "Enjoy your tropical bliss!"
     ],
     "ingredients": [
       {
-        "item": {
-          "id": "1",
-          "title": "Vodka",
-          "icon": "Bottle"
-        },
-        "measure": "50 ml"
+        "id": "rum",
+        "quantity": "50 ml"
+      },
+      {
+        "id": "pineapple_juice",
+        "quantity": "30 ml"
+      },
+      {
+        "id": "coconut_cream",
+        "quantity": "20 ml"
       }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Crisp Citrus Fizz",
+    "description": "A refreshing citrusy delight that will tickle your taste buds.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Highball",
+    "rating": 4.2,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/crisp_citrus_fizz.jpg"
+    },
+    "instructions": [
+      "Fill a highball glass with ice.",
+      "Add 50 ml of gin, 30 ml of fresh orange juice, and 20 ml of triple sec.",
+      "Top up with club soda and stir gently.",
+      "Garnish with an orange slice.",
+      "Sip and enjoy the crispness!"
+    ],
+    "ingredients": [
+      {
+        "id": "gin",
+        "quantity": "50 ml"
+      },
+      {
+        "id": "triple_sec",
+        "quantity": "20 ml"
+      },
+      {
+        "id": "fresh_orange_juice",
+        "quantity": "30 ml"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Minty Mojito Madness",
+    "description": "A classic Cuban cocktail with a twist of extra minty freshness.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Collins",
+    "rating": 4.7,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/minty_mojito_madness.jpg"
+    },
+    "instructions": [
+      "Muddle fresh mint leaves and a lime wedge in a Collins glass.",
+      "Fill the glass with ice.",
+      "Add 50 ml of white rum and 20 ml of simple syrup.",
+      "Top up with club soda and stir gently.",
+      "Garnish with mint sprigs and a lime wheel.",
+      "Enjoy the minty madness!"
+    ],
+    "ingredients": [
+      {
+        "id": "white_rum",
+        "quantity": "50 ml"
+      },
+      {
+        "id": "simple_syrup",
+        "quantity": "20 ml"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Summer Breeze",
+    "description": "A light and fruity cocktail to cool you down on a hot summer day.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Martini",
+    "rating": 4.4,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/summer_breeze.jpg"
+    },
+    "instructions": [
+      "In a shaker, combine 40 ml of vodka, 20 ml of elderflower liqueur, and 30 ml of cranberry juice.",
+      "Shake well and strain into a chilled martini glass.",
+      "Garnish with a twist of lemon.",
+      "Sip and feel the summer breeze!"
+    ],
+    "ingredients": [
+      { "id": "vodka", "quantity": "40 ml" },
+      { "id": "elderflower_liqueur", "quantity": "20 ml" },
+      { "id": "cranberry_juice", "quantity": "30 ml" }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Spicy Paloma",
+    "description": "A bold and spicy twist on the classic Paloma cocktail.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Highball",
+    "rating": 4.6,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/spicy_paloma.jpg"
+    },
+    "instructions": [
+      "Fill a highball glass with ice.",
+      "Add 60 ml of tequila, 30 ml of grapefruit juice, and a splash of jalapeño-infused agave syrup.",
+      "Stir gently and garnish with a grapefruit wedge.",
+      "Get ready for a spicy kick!"
+    ],
+    "ingredients": [
+      { "id": "tequila", "quantity": "60 ml" },
+      { "id": "grapefruit_juice", "quantity": "30 ml" },
+      { "id": "jalapeno_infused_agave_syrup", "quantity": "Splash" }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Golden Margarita",
+    "description": "A luxurious twist on the classic margarita with a hint of honey and gold.",
+    "category": "COCKTAIL",
+    "strength": "STRONG",
+    "glass": "Margarita",
+    "rating": 4.8,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/golden_margarita.jpg"
+    },
+    "instructions": [
+      "Run a lime wedge around the rim of a margarita glass and dip it in edible gold dust.",
+      "In a shaker, mix 50 ml of gold tequila, 30 ml of triple sec, and 20 ml of honey syrup with ice.",
+      "Shake well and strain into the prepared glass.",
+      "Sip and indulge in the golden goodness!"
+    ],
+    "ingredients": [
+      { "id": "gold_tequila", "quantity": "50 ml" },
+      { "id": "triple_sec", "quantity": "30 ml" },
+      { "id": "honey_syrup", "quantity": "20 ml" }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Berry Smash",
+    "description": "A vibrant and fruity cocktail that's a burst of berry goodness.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Old Fashioned",
+    "rating": 4.3,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/berry_smash.jpg"
+    },
+    "instructions": [
+      "In an old-fashioned glass, muddle a handful of mixed berries and a dash of simple syrup.",
+      "Add 60 ml of bourbon and fill the glass with ice.",
+      "Stir gently and garnish with a skewer of fresh berries.",
+      "Smash your way into berry bliss!"
+    ],
+    "ingredients": [
+      { "id": "bourbon", "quantity": "60 ml" },
+      { "id": "mixed_berries", "quantity": "Handful" },
+      { "id": "simple_syrup", "quantity": "Dash" }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Coconut Creamsicle",
+    "description": "A tropical twist on the classic creamsicle with a hint of coconut goodness.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Collins",
+    "rating": 4.5,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/coconut_creamsicle.jpg"
+    },
+    "instructions": [
+      "Fill a Collins glass with ice.",
+      "Add 50 ml of coconut rum, 30 ml of vanilla vodka, and 60 ml of orange juice.",
+      "Stir well and garnish with an orange slice.",
+      "Transport yourself to a tropical paradise!"
+    ],
+    "ingredients": [
+      { "id": "coconut_rum", "quantity": "50 ml" },
+      { "id": "vanilla_vodka", "quantity": "30 ml" },
+      { "id": "orange_juice", "quantity": "60 ml" }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Peachy Keen Bellini",
+    "description": "A delightful peach-infused twist on the classic Bellini cocktail.",
+    "category": "COCKTAIL",
+    "strength": "MODERATE",
+    "glass": "Flute",
+    "rating": 4.6,
+    "image": {
+      "type": "Remote",
+      "url": "https://example.com/peachy_keen_bellini.jpg"
+    },
+    "instructions": [
+      "In a blender, combine 100 g of fresh peaches and a splash of peach schnapps.",
+      "Blend until smooth and strain into a flute glass.",
+      "Top up with chilled Prosecco and gently stir.",
+      "Raise your glass to peachy perfection!"
+    ],
+    "ingredients": [
+      { "id": "fresh_peaches", "quantity": "100 g" },
+      { "id": "peach_schnapps", "quantity": "Splash" },
+      { "id": "prosecco", "quantity": "Chilled" }
     ]
   }
 ]

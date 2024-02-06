@@ -1,11 +1,13 @@
 import 'package:domain/services/auth.dart';
 import 'package:flutter/material.dart';
 
+import '../model/ui_state.dart';
 import '../utils/base_viewmodel.dart';
 
 final class HomeViewModel extends BaseViewModel {
   HomeViewModel({
     required Auth auth,
+    super.uiState = UIState.success,
   }) : _auth = auth;
 
   final Auth _auth;

@@ -12,6 +12,8 @@ uuid: 4.1.0
 cached_network_image: 3.3.1
 flutter_blurhash: 0.8.2
 flutter_snake_navigationbar: 0.6.1
+flutter_staggered_animations: 1.1.1
+expandable_text: 2.3.0
 
 hive: 2.2.3
 hive_flutter: 1.1.0
