@@ -17,7 +17,7 @@ extension CocktailMapper on CocktailResponse {
       title: title ?? '',
       description: description ?? '',
       category: category?.toDomain() ?? CocktailCategory.cocktail,
-      strength: strength?.toDomain() ?? CocktailStrength.medium,
+      strength: strength?.toDomain() ?? CocktailStrength.moderate,
       glass: glass ?? '',
       rating: rating ?? 0,
       image: image?.toDomain() ?? CocktailImage.empty(),
@@ -61,7 +61,7 @@ extension CocktailStrengthMapper on CocktailStrengthResponse {
   CocktailStrength toDomain() {
     return switch (this) {
       CocktailStrengthResponse.light => CocktailStrength.light,
-      CocktailStrengthResponse.medium => CocktailStrength.medium,
+      CocktailStrengthResponse.moderate => CocktailStrength.moderate,
       CocktailStrengthResponse.strong => CocktailStrength.strong,
       CocktailStrengthResponse.nonalcoholic => CocktailStrength.nonalcoholic
     };

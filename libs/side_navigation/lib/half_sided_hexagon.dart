@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class HalfSidedHexagon extends StatelessWidget {
   const HalfSidedHexagon({
     required this.icon,
+    required this.onTap,
     this.inverted = false,
     this.color,
     this.text,
     super.key,
   });
 
+  final Function() onTap;
   final Color? color;
   final Icon icon;
   final Widget? text;
@@ -16,29 +18,34 @@ class HalfSidedHexagon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: inverted
-          ? _TrailingHalfSidedHexagonClipper()
-          : _LeadingHalfSidedHexagonClipper(),
-      child: Container(
-        width: 80,
-        height: 200,
-        decoration: BoxDecoration(
+    return GestureDetector(
+      onTap: onTap,
+      child: ClipPath(
+        clipper: inverted
+            ? _TrailingHalfSidedHexagonClipper()
+            : _LeadingHalfSidedHexagonClipper(),
+        child: Material(
           color: color,
-        ),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              icon,
-              if (text != null)
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8,
-                  ),
-                  child: text,
+          child: InkWell(
+            onTap: onTap,
+            child: SizedBox(
+              height: 200,
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    icon,
+                    if (text != null)
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                        ),
+                        child: text,
+                      ),
+                  ],
                 ),
-            ],
+              ),
+            ),
           ),
         ),
       ),

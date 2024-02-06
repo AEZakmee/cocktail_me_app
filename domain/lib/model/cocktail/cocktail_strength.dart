@@ -1,6 +1,7 @@
 enum CocktailStrength {
   light,
-  medium,
+  moderate,
   strong,
+  deadly,
   nonalcoholic,
 }

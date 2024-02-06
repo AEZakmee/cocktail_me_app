@@ -2,6 +2,491 @@
   {
     "id": "vodka",
     "title": "Vodka",
-    "icon": "Bottle"
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "gin",
+    "title": "Gin",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "rum",
+    "title": "Rum",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "tequila",
+    "title": "Tequila",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "whiskey",
+    "title": "Whiskey",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "brandy",
+    "title": "Brandy",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "vermouth",
+    "title": "Vermouth",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "triple_sec",
+    "title": "Triple sec",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "absinthe",
+    "title": "Absinthe",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "champagne",
+    "title": "Champagne",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "prosecco",
+    "title": "Prosecco",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cognac",
+    "title": "Cognac",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "scotch",
+    "title": "Scotch",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "bourbon",
+    "title": "Bourbon",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "rye_whiskey",
+    "title": "Rye whiskey",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "irish_whiskey",
+    "title": "Irish whiskey",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "white_wine",
+    "title": "White wine",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "red_wine",
+    "title": "Red wine",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "sweet_vermouth",
+    "title": "Sweet vermouth",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "dry_vermouth",
+    "title": "Dry vermouth",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "amaretto",
+    "title": "Amaretto",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "baileys_irish_cream",
+    "title": "Baileys Irish Cream",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "kahlua",
+    "title": "Kahlúa",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "grand_marnier",
+    "title": "Grand Marnier",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cointreau",
+    "title": "Cointreau",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "chambord",
+    "title": "Chambord",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "frangelico",
+    "title": "Frangelico",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "midori",
+    "title": "Midori",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "campari",
+    "title": "Campari",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "aperol",
+    "title": "Aperol",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "pisco",
+    "title": "Pisco",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "sambuca",
+    "title": "Sambuca",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "malibu_rum",
+    "title": "Malibu rum",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "blue_curacao",
+    "title": "Blue Curacao",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "galliano",
+    "title": "Galliano",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "chartreuse",
+    "title": "Chartreuse",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "drambuie",
+    "title": "Drambuie",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "bitters",
+    "title": "Bitters",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "grenadine",
+    "title": "Grenadine",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "simple_syrup",
+    "title": "Simple syrup",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "agave_nectar",
+    "title": "Agave nectar",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "honey",
+    "title": "Honey",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "maple_syrup",
+    "title": "Maple syrup",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "pineapple_juice",
+    "title": "Pineapple juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "orange_juice",
+    "title": "Orange juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cranberry_juice",
+    "title": "Cranberry juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "grapefruit_juice",
+    "title": "Grapefruit juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "lemon_juice",
+    "title": "Lemon juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "lime_juice",
+    "title": "Lime juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "tomato_juice",
+    "title": "Tomato juice",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "coconut_cream",
+    "title": "Coconut cream",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cream",
+    "title": "Cream",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "half_and_half",
+    "title": "Half and half",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "milk",
+    "title": "Milk",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "egg_white",
+    "title": "Egg white",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "ginger_beer",
+    "title": "Ginger beer",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "tonic_water",
+    "title": "Tonic water",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "club_soda",
+    "title": "Club soda",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cola",
+    "title": "Cola",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "sprite",
+    "title": "Sprite",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "ginger_ale",
+    "title": "Ginger ale",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "root_beer",
+    "title": "Root beer",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "mint_leaves",
+    "title": "Mint leaves",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "basil_leaves",
+    "title": "Basil leaves",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cilantro_leaves",
+    "title": "Cilantro leaves",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "thyme",
+    "title": "Thyme",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "rosemary",
+    "title": "Rosemary",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cucumber_slices",
+    "title": "Cucumber slices",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "jalapeno_slices",
+    "title": "Jalapeño slices",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "blackberries",
+    "title": "Blackberries",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "strawberries",
+    "title": "Strawberries",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "raspberries",
+    "title": "Raspberries",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "blueberries",
+    "title": "Blueberries",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "pineapple_chunks",
+    "title": "Pineapple chunks",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "orange_slices",
+    "title": "Orange slices",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "lemon_twists",
+    "title": "Lemon twists",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "lime_wedges",
+    "title": "Lime wedges",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "maraschino_cherries",
+    "title": "Maraschino cherries",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "olives",
+    "title": "Olives",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "celery",
+    "title": "Celery",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "tabasco_sauce",
+    "title": "Tabasco sauce",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "worcestershire_sauce",
+    "title": "Worcestershire sauce",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "soy_sauce",
+    "title": "Soy sauce",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "sriracha",
+    "title": "Sriracha",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "horseradish",
+    "title": "Horseradish",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "vanilla_extract",
+    "title": "Vanilla extract",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "nutmeg",
+    "title": "Nutmeg",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cinnamon_sticks",
+    "title": "Cinnamon sticks",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cloves",
+    "title": "Cloves",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "cardamom_Pods",
+    "title": "Cardamom pods",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "allspice_berries",
+    "title": "Allspice berries",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "star_anise",
+    "title": "Star anise",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "lavender",
+    "title": "Lavender",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "rose_water",
+    "title": "Rose water",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "elderflower_liqueur",
+    "title": "Elderflower liqueur",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "maple_liqueur",
+    "title": "Maple liqueur",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "hazelnut_liqueur",
+    "title": "Hazelnut liqueur",
+    "icon": "BOTTLE"
+  },
+  {
+    "id": "mint_liqueur",
+    "title": "Mint liqueur",
+    "icon": "BOTTLE"
   }
 ]

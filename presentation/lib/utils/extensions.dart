@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:domain/model/cocktail/cocktail_category.dart';
+import 'package:domain/model/cocktail/cocktail_strength.dart';
 import 'package:flutter/material.dart';
 import 'package:localizations/generated/app_localizations.dart';
 
@@ -48,5 +50,28 @@ extension ProfileName on String {
     }
 
     return substring(0, 1).toUpperCase();
+  }
+}
+
+extension CocktailCategoryName on CocktailCategory {
+  String getLocalization(BuildContext context) {
+    return switch (this) {
+      CocktailCategory.cocktail => context.localizations.cocktails,
+      CocktailCategory.shot => context.localizations.shots,
+      CocktailCategory.ordinary => context.localizations.ordinaryDrink,
+    };
+  }
+}
+
+extension CocktailStrengthName on CocktailStrength {
+  String getLocalization(BuildContext context) {
+    final localizations = context.localizations;
+    return switch (this) {
+      CocktailStrength.light => localizations.strengthLight,
+      CocktailStrength.moderate => localizations.strengthModerate,
+      CocktailStrength.strong => localizations.strengthStrong,
+      CocktailStrength.deadly => localizations.strengthDeadly,
+      CocktailStrength.nonalcoholic => localizations.strengthNonalcoholic
+    };
   }
 }

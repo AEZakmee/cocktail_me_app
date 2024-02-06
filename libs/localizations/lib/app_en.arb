@@ -17,8 +17,20 @@
   "continueWithApple": "Continue with Apple",
   "continueAsGuest": "Continue as Guest",
   "createAccount": "Create account",
+  "filters": "Filters",
+  "type": "Drink Type",
   "shots": "Shots",
   "ordinaryDrink": "Ordinary Drink",
   "cocktails": "Cocktails",
-  "nonalcoholic": "Nonalcoholic"
+  "strength": "Drink Strength",
+  "strengthLight": "Light",
+  "strengthModerate": "Moderate",
+  "strengthStrong": "Strong",
+  "strengthDeadly": "Deadly",
+  "strengthNonalcoholic": "Nonalcoholic",
+  "ingredients": "Ingredients",
+  "resetFilters": "Reset Filters",
+  "seeAll": "See all",
+  "collapse": "Collapse",
+  "noIngredients": "No Ingredients selected"
 }

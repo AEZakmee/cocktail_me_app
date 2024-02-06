@@ -8,7 +8,7 @@ class MainScaffold extends StatelessWidget {
     this.appBar,
     this.drawer,
     this.bottomNavigationBar,
-    this.extendBodyBehindAppBar,
+    this.extendBodyBehindAppBar = false,
     super.key,
   });
 
@@ -16,7 +16,7 @@ class MainScaffold extends StatelessWidget {
   final Widget? drawer;
   final Widget body;
   final Widget? bottomNavigationBar;
-  final bool? extendBodyBehindAppBar;
+  final bool extendBodyBehindAppBar;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,8 @@ class MainScaffold extends StatelessWidget {
         ),
       ),
       child: Scaffold(
-        extendBodyBehindAppBar: extendBodyBehindAppBar ?? false,
+        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: extendBodyBehindAppBar,
         appBar: appBar,
         drawer: drawer,
         body: SafeArea(child: body),

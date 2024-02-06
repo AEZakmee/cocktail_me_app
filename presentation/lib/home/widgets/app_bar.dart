@@ -19,7 +19,10 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         actions: const [
           Padding(
-            padding: EdgeInsets.only(right: 12),
+            padding: EdgeInsets.only(
+              right: 12,
+              bottom: 8,
+            ),
             child: AppCircleAvatar(
               imageUrl: '',
               username: 'Kris',

@@ -31,25 +31,26 @@ class SideNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Indexer(
-          children: List.generate(
-            elements.length,
-            (index) {
-              final element = elements[index];
-              final isSelected = index == selectedIndex;
-              return Indexed(
-                index: isSelected ? 5 : elements.length - index,
-                child: Padding(
-                  padding: EdgeInsets.only(top: (160 * index).toDouble()),
-                  child: GestureDetector(
-                    onTap: () {
-                      if (onTap != null) {
-                        onTap!(index);
-                      }
-                    },
+    return SizedBox(
+      width: 80,
+      child: Stack(
+        children: [
+          Indexer(
+            children: List.generate(
+              elements.length,
+              (index) {
+                final element = elements[index];
+                final isSelected = index == selectedIndex;
+                return Indexed(
+                  index: elements.length - index,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: (160 * index).toDouble()),
                     child: HalfSidedHexagon(
+                      onTap: () {
+                        if (onTap != null) {
+                          onTap!(index);
+                        }
+                      },
                       inverted: sideNavigationPosition.isInverted(),
                       color: isSelected
                           ? element.selectedColor
@@ -72,12 +73,12 @@ class SideNavigation extends StatelessWidget {
                           : null,
                     ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

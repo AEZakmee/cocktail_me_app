@@ -17,6 +17,7 @@ class AppTheme {
           _colors,
         ],
         primaryColor: _colors.primaryColor,
+        splashColor: Colors.transparent,
         colorScheme: _colorScheme,
         appBarTheme: AppBarTheme(
           backgroundColor: _colors.surfaceColor,
@@ -27,6 +28,7 @@ class AppTheme {
         elevatedButtonTheme: _elevatedButtonTheme,
         bottomSheetTheme: _bottomSheetTheme,
         textButtonTheme: _textButtonTheme,
+        chipTheme: _chipTheme,
       );
 
   AppColors get _colors {
@@ -56,13 +58,32 @@ class AppTheme {
   }
 
   BottomSheetThemeData get _bottomSheetTheme => BottomSheetThemeData(
-        backgroundColor: _colors.surfaceColor,
+        backgroundColor: _colors.primaryColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(32),
             topRight: Radius.circular(32),
           ),
         ),
+        showDragHandle: true,
+      );
+
+  ChipThemeData get _chipTheme => ChipThemeData(
+        backgroundColor: Colors.transparent,
+        color: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.selected)) {
+            return _colors.accentColor;
+          }
+          return _colors.accentColor?.withOpacity(0.5);
+        }),
+        labelStyle: _textTheme.titleLarge?.copyWith(
+          color: _colors.primaryColor,
+        ),
+        pressElevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        side: BorderSide.none,
       );
 
   TextSelectionThemeData get _textSelectionTheme => TextSelectionThemeData(

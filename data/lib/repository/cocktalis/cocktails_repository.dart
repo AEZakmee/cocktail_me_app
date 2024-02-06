@@ -1,4 +1,5 @@
 import 'package:domain/model/cocktail/cocktail.dart';
+import 'package:domain/model/handler/data_response.dart';
 import 'package:domain/repositories/cocktails_repository.dart';
 import 'package:utils/let_extension.dart';
 
@@ -20,21 +21,23 @@ class CocktailsRepositoryImpl implements CocktailsRepository {
   Iterable<Cocktail> _cocktails = const [];
 
   @override
-  Iterable<Cocktail> get cocktails => _cocktails;
+  Future<DataResponse<Iterable<Cocktail>>> fetchCocktails({
+    bool readCache = true,
+  }) async {
+    if (readCache && _cocktails.isNotEmpty) {
+      return DataResponse(data: _cocktails);
+    }
 
-  @override
-  Future<bool> loadCocktails() async {
     final result = await _requestHandler.safeApiCall(
       _cocktailsApiClient.fetchCocktails,
     );
 
-    return result
-            .toDataResponse((data) => data.map((e) => e.toDomain()))
-            .data
-            ?.let((cocktails) {
-          _cocktails = cocktails;
-          return true;
-        }) ??
-        false;
+    final response = result.toDataResponse(
+      (data) => data.map((e) => e.toDomain()),
+    );
+
+    response.data?.let((cocktails) => _cocktails = cocktails);
+
+    return response;
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../app/di/locator.dart';
 import '../utils/ui_state_builder.dart';
@@ -17,15 +16,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ViewModelBuilder<HomeViewModel>(
         viewModelBuilder: locator,
-        builder: (context, _) => UIStateBuilder(
-          context.read<HomeViewModel>().uiState,
-          successState: const MainScaffold(
+        builder: (context, _) => const UIStateBuilder<HomeViewModel>(
+          successState: MainScaffold(
             appBar: MainAppBar(),
             body: HomeBody(),
             bottomNavigationBar: MainNavigationBar(),
             drawer: MainDrawer(),
           ),
-          errorState: const Text('Something went wrong'),
+          errorState: Text('Something went wrong'),
         ),
       );
 }
